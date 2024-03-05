@@ -33,15 +33,21 @@ public class ToyServiceImpl implements ToyService {
 	@Override
 	public ToyEntity save(ToyDto dto) {
 		ToyEntity entity = new ToyEntity();
+		
+		if(dto!=null) {
 		BeanUtils.copyProperties(dto, entity);
 		entity.setCreatedBy(dto.getCreatedBy());
 		entity.setCreatedDate(LocalDateTime.now());
 		entity.setUpdatedBy(dto.getUpdatedBy());
 		entity.setUpdateOn(LocalDateTime.now());
+		}
+		else {
+			System.out.println("Dto is null");
+			return null;
+		}
 		return toyRepo.save(entity);
-
+		
 	}
-
 	@Override
 	public String saveAll(List<ToyDto> dto) {
 

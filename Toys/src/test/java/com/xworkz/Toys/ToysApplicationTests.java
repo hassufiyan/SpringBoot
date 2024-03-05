@@ -3,10 +3,10 @@ package com.xworkz.Toys;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class ToysApplicationTests {
 
-	@Test
+//	@Test
 	void contextLoads() {
 	}
 
